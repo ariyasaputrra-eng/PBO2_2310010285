@@ -6,6 +6,7 @@ package frame;
 import javax.swing.table.DefaultTableModel;
 import model.periksa;
 import java.util.ArrayList;
+import laporan.LaporanPeriksa;
 /**
  *
  * @author ACER
@@ -101,6 +102,7 @@ private void tampilCari(String keyword) {
         jScrollPane2 = new javax.swing.JScrollPane();
         tblPeriksa = new javax.swing.JTable();
         txtCari = new javax.swing.JTextField();
+        btnCetak = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -195,6 +197,13 @@ private void tampilCari(String keyword) {
             }
         });
 
+        btnCetak.setText("Cetak Laporan");
+        btnCetak.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCetakActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -240,6 +249,8 @@ private void tampilCari(String keyword) {
                 .addComponent(btnHapus)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnTampil)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnCetak)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -279,7 +290,8 @@ private void tampilCari(String keyword) {
                     .addComponent(btnTambah)
                     .addComponent(btnHapus)
                     .addComponent(btnTampil)
-                    .addComponent(btnUbah))
+                    .addComponent(btnUbah)
+                    .addComponent(btnCetak))
                 .addContainerGap(47, Short.MAX_VALUE))
         );
 
@@ -353,6 +365,10 @@ String keyword = txtCari.getText().trim();
         // TODO add your handling code here:
     }//GEN-LAST:event_txtCariKeyReleased
 
+    private void btnCetakActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCetakActionPerformed
+LaporanPeriksa.cetak();        // TODO add your handling code here:
+    }//GEN-LAST:event_btnCetakActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -389,6 +405,7 @@ String keyword = txtCari.getText().trim();
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnCetak;
     private javax.swing.JButton btnHapus;
     private javax.swing.JButton btnTambah;
     private javax.swing.JButton btnTampil;

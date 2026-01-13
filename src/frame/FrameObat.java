@@ -6,6 +6,7 @@ package frame;
 import javax.swing.table.DefaultTableModel;
 import java.util.ArrayList;
 import model.obat;
+import laporan.LaporanObat;
 /**
  *
  * @author ACER
@@ -97,6 +98,7 @@ private void tampilCari(String keyword) {
         jScrollPane1 = new javax.swing.JScrollPane();
         tblObat = new javax.swing.JTable();
         txtCari = new javax.swing.JTextField();
+        btnCetak = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -165,6 +167,13 @@ private void tampilCari(String keyword) {
             }
         });
 
+        btnCetak.setText("Cetak Laporan");
+        btnCetak.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCetakActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -179,7 +188,9 @@ private void tampilCari(String keyword) {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(btnHapus)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnTampil))
+                        .addComponent(btnTampil)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(btnCetak))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(layout.createSequentialGroup()
@@ -240,7 +251,8 @@ private void tampilCari(String keyword) {
                     .addComponent(btnTambah)
                     .addComponent(btnUbah)
                     .addComponent(btnHapus)
-                    .addComponent(btnTampil))
+                    .addComponent(btnTampil)
+                    .addComponent(btnCetak))
                 .addContainerGap(107, Short.MAX_VALUE))
         );
 
@@ -296,6 +308,10 @@ tampilData();
         // TODO add your handling code here:
     }//GEN-LAST:event_txtCariKeyReleased
 
+    private void btnCetakActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCetakActionPerformed
+ LaporanObat.cetak();        // TODO add your handling code here:
+    }//GEN-LAST:event_btnCetakActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -332,6 +348,7 @@ tampilData();
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnCetak;
     private javax.swing.JButton btnHapus;
     private javax.swing.JButton btnTambah;
     private javax.swing.JButton btnTampil;
